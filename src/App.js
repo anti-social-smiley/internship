@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import MapContainer from "./components/Map";
+import AutocompleteInput from "./components/AutocompleteInput";
+import Sidebar from "./components/Sidebar";
+import PlaceDetails from "./components/PlaceDetails";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1 id="intro">Google Maps</h1>
+      <AutocompleteInput />
+      <div id="container">
+        <MapContainer />
+        <PlaceDetails
+          name="Selected Place Name"
+          address="Selected Place Address"
+          phone="Selected Place Phone"
+          website="Selected Place Website"
+        />
+        <Sidebar>
+          <li>Recommended Place 1</li>
+          <li>Recommended Place 2</li>
+          {/* Add more recommended places */}
+        </Sidebar>
+      </div>
     </div>
   );
 }
